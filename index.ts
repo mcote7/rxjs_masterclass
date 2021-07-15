@@ -5,4 +5,6 @@ import { of } from 'rxjs';
  * Updates will trigger a live reload on http://localhost:1234/
  * after running npm start.
  */
+
 of('Hello', 'RxJS').subscribe(console.log);
+
