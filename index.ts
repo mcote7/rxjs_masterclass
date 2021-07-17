@@ -8,7 +8,7 @@
 
 // of('Hello', 'RxJS').subscribe(console.log);
 
-// import { interval, Subject } from "rxjs";
+// import { BehaviorSubject, interval, Subject } from "rxjs";
 // import { tap } from 'rxjs/operators';
 
 // const observer = {
@@ -17,7 +17,7 @@
 //   complete: () => console.log('complete')
 // };
 
-// const subject = new Subject();
+// const subject = new BehaviorSubject('Sweet behave');
 
 // const subscription = subject.subscribe(observer);
 
@@ -31,5 +31,25 @@
 //   tap(val => console.log("new interval", val))
 // );
 
-// interval$.subscribe(subject);
+// interval$.subscribe();
 
+
+// 🏪 RXJS STORE 
+
+import { ObservableStore } from "./store";
+
+const store = new ObservableStore({
+  user: 'michael cote',
+  isAuth: false
+});
+
+store.selectState('user').subscribe(console.log);
+store.selectState('isAuth').subscribe(console.log);
+
+store.updateState({
+  user: 'timmy VanRenslser'
+});
+
+store.updateState({
+  isAuth: true
+});
