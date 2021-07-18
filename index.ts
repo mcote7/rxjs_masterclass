@@ -36,6 +36,7 @@
 
 // 🏪 RXJS STORE 
 
+import { asyncScheduler, range } from "rxjs";
 import { ObservableStore } from "./store";
 
 const store = new ObservableStore({
@@ -54,5 +55,8 @@ store.updateState({
   isAuth: true
 });
 
+store.stateChanges().subscribe(console.log);
+
 // end STORE 
 
+range(1,10, asyncScheduler).subscribe(console.log)
