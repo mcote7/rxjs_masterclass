@@ -53,3 +53,6 @@ store.updateState({
 store.updateState({
   isAuth: true
 });
+
+// end STORE 
+
